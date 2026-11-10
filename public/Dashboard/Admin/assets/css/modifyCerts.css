@@ -1,0 +1,308 @@
+/* --- ESTRUCTURA GENERAL --- */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.page-header p {
+    color: #999;
+    margin-bottom: 2rem;
+}
+
+/* --- TARJETA PRINCIPAL (CONTENEDOR) --- */
+.card.table-container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* --- CABECERA LISTA --- */
+.list-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que baje si no cabe */
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.list-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-icon {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0; /* Evita que el icono se aplaste */
+}
+
+.list-title h2 {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Evita que el título se parta mal */
+}
+
+.section-desc {
+    margin-left: 38px;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* --- BUSCADOR --- */
+.search-box {
+    position: relative;
+    width: 300px;
+    max-width: 100%; /* Para que no se salga en móvil */
+}
+.search-box input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #888;
+    box-sizing: border-box; /* IMPORTANTE para que el padding no sume ancho */
+}
+.search-box .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    font-style: normal;
+}
+
+/* --- GRID DE LA TABLA (Layout Desktop) --- */
+/* Solo se aplica si la pantalla es grande */
+.row-grid {
+    display: grid;
+    grid-template-columns: 60px 2fr 1fr 1.5fr 1fr 100px;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-row {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    display: grid; /* Asegura que se comporte como grid en desktop */
+}
+
+.header-row span {
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- FILAS DE DATOS --- */
+.row-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.col-id {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Inputs */
+.input-pill {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+    transition: box-shadow 0.2s;
+    box-sizing: border-box; /* Evita desbordamientos */
+}
+.input-pill:focus {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    outline: none;
+}
+.input-pill.centered-text {
+    text-align: center;
+}
+
+.bold-text {
+    font-weight: bold;
+    display: block; /* Para que ocupe espacio correctamente */
+}
+
+/* Botones */
+.col-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+.btn-action {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+.btn-modify { background-color: #4ADE80; color: #1a4928; }
+.btn-delete { background-color: #DC3545; }
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.page-link {
+    width: 30px; height: 30px;
+    display: flex; justify-content: center; align-items: center;
+    font-weight: bold; cursor: pointer; border-radius: 5px;
+}
+.page-link.active {
+    background-color: #26cba5; color: white;
+}
+
+/* ==========================================================================
+   MÓVIL / TABLET (Aquí está la corrección importante)
+   ========================================================================== */
+@media (max-width: 900px) {
+
+    body
+    {
+        color: black;
+    }
+    
+    .page-header > p
+    {
+        color: white !important;
+    }
+
+    .mainContent
+    {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .card.table-container {
+        padding: 20px 15px; /* Menos padding lateral para ganar espacio */
+    }
+
+    /* 1. Ocultar la cabecera de la tabla (ID, NOMBRE...) */
+    .header-row {
+        display: none !important;
+    }
+
+    /* 2. Convertir el Grid en Bloques (Stack vertical) */
+    .row-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* Quitamos gap del grid, usaremos margin en los hijos */
+    }
+
+    /* 3. Estilo de cada "Celda" en móvil */
+    .row-grid > div {
+        margin-bottom: 15px; /* Espacio entre campos */
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* 4. Títulos (Labels) automáticos */
+    /* Usamos el atributo data-label del HTML para poner el título encima */
+    .row-grid > div::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: #999;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    /* Ajuste específico para el ID */
+    .col-id {
+        text-align: left;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        color: var(--navColor);
+    }
+    .col-id::before {
+        display: inline !important; /* Que el "ID" salga en la misma línea */
+        margin-right: 5px;
+    }
+
+    /* Ajuste de inputs en móvil */
+    .input-pill, .input-pill.centered-text {
+        text-align: left; /* En móvil se lee mejor a la izquierda */
+        background-color: #f9f9f9; /* Un poco de gris para diferenciar del fondo blanco */
+        border: 1px solid #eee; /* Borde suave para delimitar */
+    }
+
+    /* Botones de acción en móvil */
+    .col-actions {
+        justify-content: space-between; /* Separados */
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .col-actions::before {
+        display: none !important; /* Ocultar la etiqueta "ACCIÓN" si molesta */
+    }
+    .btn-action {
+        width: 100%; /* Botones anchos fáciles de pulsar */
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    /* Buscador full width */
+    .search-box {
+        width: 100%;
+    }
+    .list-top-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Descripción */
+    .section-desc {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}

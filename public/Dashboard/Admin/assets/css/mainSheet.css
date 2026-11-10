@@ -1,0 +1,90 @@
+.minStatistics
+{
+    display: flex;
+    gap: 50px;
+    margin-left: 250px;
+}
+
+.value
+{
+    margin-top: 15px;
+}
+
+.shortcuts
+{
+    margin-left: 245px;
+    margin-top: 55px;
+}
+
+.dashHome
+{
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.buttonSet
+{
+    margin-top: 30px;
+}
+.lowItem
+{
+    left: 2px;
+    top: 2px;
+}
+
+@media (max-width: 768px)
+{
+    .mainContent
+    {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .minStatistics
+     {
+        margin-left: 16px;
+        gap: 10px;
+     }
+    .weekUsers
+     {
+        display: none;
+     }
+
+    body
+    {
+        background: var(--navColor);
+        color: white;
+    }
+
+    .shortcuts
+    {
+        margin-left: 24px;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: white;
+    }
+
+    .shortcuts > span
+    {
+        margin-right: 10px;
+        margin-left: 8px;
+        color: black;
+        font-size: 0.9em;
+    }
+    
+}
+
+@media screen and (width <= 380px) 
+{
+
+    .minStatistics
+    {
+        margin-left: 7px;
+    }
+    .shortcuts
+    {
+        margin-top: 40px;
+    }
+}

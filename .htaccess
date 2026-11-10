@@ -1,0 +1,52 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    
+    # Base del proyecto
+    RewriteBase /E3IWebPage/
+
+    # ----------------------------------------------------------------------
+    # 1. LIMPIEZA DE URL (External Redirects - Visible al usuario)
+    # ----------------------------------------------------------------------
+    # A) Quitar "/public/" de la URL visible
+    RewriteCond %{THE_REQUEST} /E3IWebPage/public/ [NC]
+    RewriteRule ^public/(.*)$ $1 [L,R=301]
+
+    # B) Quitar extensión ".html" de la URL visible
+    RewriteCond %{THE_REQUEST} /E3IWebPage/.*\.html [NC]
+    RewriteRule ^(.*)\.html$ $1 [L,R=301]
+
+    # ----------------------------------------------------------------------
+    # 2. ENRUTAMIENTO INTERNO (Internal Rewrites - Transparente)
+    # ----------------------------------------------------------------------
+
+    # === C) REGLA PRIORITARIA: HOME/INDEX ===
+    # Esta regla debe ir PRIMERO. Si piden la raíz vacía, carga public/index.html
+    # y detén el proceso ([L]) para que no se confunda con un directorio real.
+    RewriteRule ^$ public/index.php [L]
+
+    # D) Ignorar archivos o carpetas reales
+    # (Si el usuario pide algo que SÍ existe físicamente en la raíz, sírvelo)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # E) RECURSOS (CSS, JS, IMG...):
+    # Si no estaba en la raíz, busca si existe dentro de public/
+    RewriteCond %{DOCUMENT_ROOT}/E3IWebPage/public/$1 -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/E3IWebPage/public/$1 -d
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # F) PÁGINAS (Rutas limpias):
+    # Si piden "innovacion", carga "public/innovacion.html"
+    RewriteCond %{DOCUMENT_ROOT}/E3IWebPage/public/$1.html -f
+    RewriteRule ^(.*)$ public/$1.html [L]
+
+    RewriteCond %{DOCUMENT_ROOT}/E3IWebPage/public/$1.php -f
+    RewriteRule ^(.*)$ public/$1.php [L]    
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^api/(.*)$ public/api/index.php [L,QSA]
+
+</IfModule>

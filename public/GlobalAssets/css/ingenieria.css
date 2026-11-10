@@ -1,0 +1,476 @@
+/* =======================================
+   E3i - ESTILOS INGENIERÍA
+   (Tipografía Atkinson Hyperlegible + Estilo Landing)
+   ======================================= */
+
+
+/* --- ESTILOS GENERALES DE SECCIÓN --- */
+
+
+h2 {
+    color: var(--color-primary-green);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+
+.section-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* --- SECCIÓN HERO --- */
+
+
+.engineering-hero {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto; 
+    height: 444px; 
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+
+.engineering-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* --- BLOQUES DE ÁREA (Zig-Zag) --- */
+
+
+.area-block {
+    margin-bottom: 100px;
+}
+
+
+.area-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px; 
+}
+
+
+/* --- TEXTOS DE ÁREA --- */
+
+
+.area-text {
+    flex: 1;
+    max-width: 600px;
+    margin-top: 80px;
+}
+
+
+.area-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary-green);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+
+.area-text p {
+    font-size: 18px;
+    color: var(--color-text-body);
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: justify;
+}
+
+
+/* --- IMÁGENES DE ÁREA --- */
+
+
+.area-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.area-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+}
+
+
+/* --- LÍNEAS NEGRAS DECORATIVAS --- */
+
+
+/* Línea Izquierda (Industria, Renovables, Seguridad) */
+.area-text.left-line h3 {
+    position: relative;
+    padding-left: 0;
+}
+
+
+.area-text.left-line h3::before {
+    content: '';
+    position: absolute;
+    left: -20px; 
+    top: 5px;
+    width: 0.5px;
+    min-height: 180px;
+    height: 100%;
+    background-color: #000000; 
+}
+
+
+/* Línea Derecha (Edificación, Energía) */
+.right-line-align {
+    text-align: right;
+}
+
+
+.right-line-align h3 {
+    position: relative;
+    padding-right: 0;
+}
+
+
+.right-line-align h3::before {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    width: 1px;
+    min-height: 180px;
+    height: 100%;
+    background-color: #000000; 
+}
+
+
+.right-line-align p {
+    text-align: right; 
+}
+
+
+/* --- SECCIÓN AHORRO ENERGÉTICO --- */
+
+
+.savings-section {
+    margin-bottom: 120px;
+}
+
+
+.savings-content {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+
+.savings-text {
+    flex: 1;
+}
+
+
+.savings-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary-green);
+    margin-bottom: 20px;
+}
+
+
+.savings-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--color-text-body);
+    line-height: 1.5;
+    text-align: justify;
+}
+
+
+.savings-text .sub-title {
+    margin-top: 40px;
+    color: var(--color-primary-green);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.savings-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+
+.savings-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--color-text-body);
+    line-height: 1.5;
+}
+
+
+.savings-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.savings-image img {
+    width: 100%;
+    max-width: 700px; 
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE (Ingeniería)
+   Nota: NO incluir footer aquí (va en global.css)
+   ======================================= */
+
+/* Tablets y móviles medianos */
+@media (max-width: 768px) {
+
+    /* Contenedor */
+    .section-container {
+        padding: 0 20px;
+    }
+
+    /* Títulos centrados en móvil */
+    h2, h3 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    /* HERO */
+    .engineering-hero {
+        height: 260px;
+        margin-bottom: 50px;
+    }
+
+    .engineering-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* BLOQUES DE ÁREA (en móvil: texto arriba, imagen abajo) */
+    .area-block {
+        margin-bottom: 60px;
+    }
+
+    .area-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .area-text {
+        order: 1;              /* texto arriba */
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .area-image {
+        order: 2;              /* imagen abajo */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .area-text h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .area-text p {
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .area-image img {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+    }
+
+    /* Quitar líneas decorativas en móvil */
+    .area-text.left-line h3::before,
+    .right-line-align h3::before {
+        display: none;
+    }
+
+    /* Evitar alineación derecha en móvil */
+    .right-line-align,
+    .right-line-align h3,
+    .right-line-align p {
+        text-align: center;
+    }
+
+    /* AHORRO ENERGÉTICO */
+    .savings-section {
+        margin-bottom: 70px;
+    }
+
+    .savings-content {
+        display: flex;
+        flex-direction: column;   /* texto arriba, imagen abajo */
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .savings-text h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .savings-text p {
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 16px;
+    }
+
+    .savings-text .sub-title {
+        font-size: 20px;
+        margin-top: 24px;
+        text-align: center;
+    }
+
+    .savings-list {
+        padding-left: 18px;
+        margin-top: 12px;
+    }
+
+    .savings-list li {
+        font-size: 16px;
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+
+    .savings-image {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .savings-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    footer h3{ text-align: left; }
+}
+
+/* Móviles pequeños */
+@media (max-width: 380px) {
+
+    .section-container {
+        padding: 0 16px;
+    }
+
+    /* Títulos centrados */
+    h2, h3 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    /* HERO */
+    .engineering-hero {
+        height: 200px;
+        margin-bottom: 40px;
+    }
+
+    /* BLOQUES DE ÁREA */
+    .area-block {
+        margin-bottom: 45px;
+    }
+
+    .area-content {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .area-text {
+        order: 1;
+        margin-top: 0;
+    }
+
+    .area-image {
+        order: 2;
+    }
+
+    .area-text h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        
+    }
+
+    .area-text p {
+        font-size: 14px;
+    }
+
+    .area-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* AHORRO ENERGÉTICO */
+    .savings-section {
+        margin-bottom: 50px;
+    }
+
+    .savings-content {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .savings-text h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .savings-text p {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .savings-text .sub-title {
+        font-size: 18px;
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    .savings-list {
+        padding-left: 18px;
+        margin-top: 10px;
+    }
+
+    .savings-list li {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+      footer h3{ text-align: left; }
+
+}

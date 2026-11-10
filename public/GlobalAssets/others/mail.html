@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Verifica tu cuenta EGi</title>
+    <style>
+        /* RESET BÁSICO */
+        table, td, div, h1, p { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; }
+        table, td { border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { border: 0; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+        
+        /* MÓVILES */
+        @media screen and (max-width: 525px) {
+            .wrapper { width: 100% !important; max-width: 100% !important; }
+            .mobile-padding { padding: 30px 20px !important; }
+            .mobile-button { display: block !important; width: 100% !important; padding: 15px 0 !important; font-size: 18px !important; }
+            .mobile-title { font-size: 24px !important; }
+            .mobile-text { font-size: 16px !important; line-height: 1.5 !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+
+    <div style="background-color: #f4f4f4; width: 100%;">
+        
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+            
+            <tr>
+                <td style="height: 4px; background-color: #00a0b0; line-height: 4px; font-size: 4px;">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td align="center" style="padding: 40px 0 10px 0;">
+                    <img src="./GlobalAssets/img/icons/logo-e3i.png" alt="EGi" width="160" style="display: block; width: 160px; max-width: 100%; height: auto;">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="mobile-padding" style="padding: 20px 50px 40px 50px;">
+                    
+                    <h1 class="mobile-title" style="margin: 0 0 25px 0; color: #1E2329; font-size: 26px; font-weight: 700; text-align: center; letter-spacing: -0.5px;">Verifica tu cuenta</h1>
+                    
+                    <p class="mobile-text" style="margin: 0 0 25px 0; color: #474D57; font-size: 16px; line-height: 1.6; text-align: center;">
+                        Hola, hemos recibido una solicitud de registro en <strong>E3I</strong>. Confirma tu correo para continuar.
+                    </p>
+
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px;">
+                        <tr>
+                            <td align="center">
+                                <div style="background-color: #F2F4F6; border-radius: 8px; padding: 12px 24px; display: inline-block; min-width: 200px;">
+                                    <p style="margin: 0 0 4px 0; font-size: 11px; color: #848E9C; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+                                        Código Anti-Phishing
+                                    </p>
+                                    <p style="margin: 0; font-size: 16px; color: #1E2329; font-weight: 600; font-family: 'Consolas', 'Courier New', monospace;">
+                                        {{DNI_USUARIO}}
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="center" style="padding: 0 0 25px 0;">
+                                <a href="{{LINK_VERIFICACION}}" target="_blank" class="mobile-button" style="background-color: #2ea84f; color: #ffffff; padding: 16px 32px; display: inline-block; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 16px; transition: background-color 0.3s;">
+                                    Confirmar correo electrónico
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p class="mobile-text" style="margin: 10px 0 0 0; color: #848E9C; font-size: 14px; text-align: center; line-height: 1.5;">
+                        ¿No funciona el botón? Usa este enlace:<br>
+                        <a href="{{LINK_VERIFICACION}}" style="color: #00a0b0; text-decoration: none; word-break: break-all;">{{LINK_VERIFICACION}}</a>
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="background-color: #ffffff; padding: 30px 20px; text-align: center; border-top: 1px solid #F2F4F6;">
+                    <p style="margin: 0 0 10px 0; color: #B7BDC6; font-size: 12px;">
+                        &copy; 2025 E3I Ingeniería. Todos los derechos reservados.
+                    </p>
+                    <p style="margin: 0; color: #B7BDC6; font-size: 12px; line-height: 1.4;">
+                        Este mensaje automático se envió a tu correo por motivos de seguridad.<br>
+                        Si no reconoces esta actividad, por favor ignora este mensaje.
+                    </p>
+                </td>
+            </tr>
+        </table>
+        </div>
+</body>
+</html>

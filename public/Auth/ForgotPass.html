@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="../GlobalAssets/img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E3I - Recuperar Contraseña</title>
+    <link rel="stylesheet" href="./assets/css/recuperar.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="importmap">
+        {
+            "imports":
+            {
+                "ForgotController": "../GlobalAssets/js/Controllers/Forgot/ForgotController.js"
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.js"></script>        
+    <script src="./assets/js/recover.js" type="module"></script>
+       <style>
+        #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo negro */
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- 2. El Loader (Contenedor) --- */
+.loader {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+}
+
+/* --- 3. Los Anillos con Degradado --- */
+.loader::before, .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    
+    /* TRUCO: Usamos padding para definir el GROSOR del borde (8px) */
+    padding: 8px;
+    
+    /* AQUI VA TU DEGRADADO */
+    background: linear-gradient(
+        90deg,
+        rgba(3,172,40,0.65) 0%,      
+        rgba(50,187,163,0.60) 60%,   
+        rgba(0,169,212,0.68) 100%    
+    );
+    
+    /* LA MAGIA: Esto recorta el centro para que parezca un borde */
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    /* La animación original */
+    animation: prixClipFix 2s linear infinite;
+}
+
+/* Ajustes para el segundo anillo (el interior) */
+.loader::after {
+    /* Hacemos que el degradado del anillo interior sea ligeramente distinto 
+       invirtiendo la dirección o dejándolo igual. Aquí lo dejo igual. */
+    inset: 16px;
+    transform: rotate3d(90, 90, 0, 180deg);
+}
+
+/* --- Animaciones (Sin cambios) --- */
+@keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    75%, 100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+}
+    </style>
+</head>
+<body>
+<div id="loader">
+        <span class="loader"></span>
+    </div>   
+    
+    <div class="login-container">
+        <div class="logo-wrapper">
+            <img src="../GlobalAssets/img/icons/logo-e3i.png" alt="Logo E3I">
+        </div>
+
+        <h1>Recuperar Contraseña</h1>
+        <p>Introduce el correo electrónico asociado a tu cuenta de E3I y te enviaremos un enlace de recuperación.</p>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                <span id="error-email" class="error" style="display: none; color: red;">El email es incorrecto.</span>
+            </div>
+            
+            <div class="g-recaptcha" data-sitekey="6LfigzosAAAAAF0Y2EZIc5GS9gVHOLXgU5NXbjci"></div>
+            <span id="error-g-recaptcha-response" class="error" style="display: none; color: red;">Debes de completar el reCaptcha.</span>  
+            
+            <br>
+
+            <button type="submit" class="btn-submit" id="submit">Enviar enlace</button>
+        </form>
+
+        <a href="../" class="back-link">← Volver al inicio de sesión</a>
+    </div>
+    
+    
+       <div class="login-container" style="display: none;">
+        <div class="logo-wrapper">
+            <img src="../GlobalAssets/img/icons/logo-e3i.png" alt="Logo E3I">
+        </div>
+
+        <h1>Nueva Contraseña</h1>
+        <p>Por favor, introduce tu nueva contraseña en los campos de abajo para finalizar el proceso. <br> <b style="color: red;"> La contraseña debe de tener al menos 8 caracteres, 2 mayúsculas y 1 caracter especial</b></p>
+
+        <form id="resetForm" action="#" method="POST">
+            <div class="form-group">
+                <label for="pass1">Nueva Contraseña</label>
+                <input type="password" id="pass1" name="pass1" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pass2">Confirmar Contraseña</label>
+                <input type="password" id="pass2" name="pass2" placeholder="••••••••" required>
+            </div>
+
+            <span id="msg" class="validation-msg"></span>
+
+            <button type="submit" id="btnSubmit" class="btn-submit" disabled>Cambiar Contraseña</button>
+        </form>
+    </div>
+
+    <script type="module">
+    import {ForgotFrontEnd} from "ForgotController";    
+    function markAsError(...ids)
+    {
+        ids = ids[0].split(",");
+
+        for(let id of ids)
+        {
+            let getItem = document.getElementById(id);
+
+            if(!getItem) getItem = document.getElementsByName(id)[0];
+
+            getItem.classList.add("error");
+
+            document.getElementById(`error-${id}`).style.display = "block";
+        }
+
+    }        
+        const wht = document.getElementsByClassName("login-container");
+        const url = new URLSearchParams(window.location.search);
+        let token = url.get("token");
+
+        if(token)
+        {
+            wht[0].style.display = "none";
+            wht[1].style.display = "block";
+        }
+
+        const submiter = document.getElementById("btnSubmit");
+
+
+        const pass1 = document.getElementById('pass1');
+        const pass2 = document.getElementById('pass2');
+        const msg = document.getElementById('msg');
+        const btn = document.getElementById('btnSubmit');
+
+        function validatePassword() {
+            const val1 = pass1.value;
+            const val2 = pass2.value;
+
+            // Limpiar estados si ambos están vacíos
+            if(val1 === "" && val2 === "") {
+                pass1.classList.remove('error', 'success');
+                pass2.classList.remove('error', 'success');
+                msg.textContent = "";
+                btn.disabled = true;
+                return;
+            }
+
+            // Lógica de comparación
+            if (val1 === val2 && val1 !== "") {
+                // Coinciden
+                pass2.classList.remove('error');
+                pass2.classList.add('success');
+                msg.className = "validation-msg text-success"
+                msg.textContent = "";
+                btn.disabled = false; // Habilitar botón
+            } else {
+                // No coinciden
+                if(val2 !== "") {
+                    pass2.classList.add('error');
+                    pass2.classList.remove('success');
+                    msg.textContent = "Las contraseñas no coinciden";
+                    msg.className = "validation-msg text-error";
+                    btn.disabled = true; // Deshabilitar botón
+                } else {
+                    // Si el segundo está vacío pero el primero no, resetear visuales del segundo
+                    pass2.classList.remove('error', 'success');
+                    msg.textContent = "";
+                    btn.disabled = true;
+                }
+            }
+        }
+
+        // Escuchar eventos en ambos campos
+        pass1.addEventListener('input', validatePassword);
+        pass2.addEventListener('input', validatePassword);
+
+        submiter.addEventListener("click", async(eve) => 
+        {
+            eve.preventDefault();
+
+            let loader = document.getElementById("loader");
+            loader.style.display = "flex";
+
+            try
+            {
+
+                const forgotMe = new ForgotFrontEnd({"password": document.getElementById("pass1").value, "r-password": document.getElementById("pass2").value, "token": token });
+
+
+                const result =  await forgotMe.executeVerifyLink();
+        
+
+                switch(result.statusCode)
+                {
+
+                case 200:
+                        Toastify({
+                            text: "Éxito: Se ha restablecido con éxito tu contraseña",
+                            duration: 3000,
+                            gravity: "top", 
+                            position: "right", 
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                            }).showToast();  
+                    return;
+
+                    case 400:
+                    case 401:
+                        Toastify({
+                            text: "Error: "+ result.response,
+                            duration: 3000,
+                            gravity: "top", 
+                            position: "right", 
+                            style: {
+                                background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+                            }
+                            }).showToast();
+                    break;
+
+
+                    default:
+                    console.error("PANIC MODE! THAT STATUS CODE PROBABLY MEANS THAT'S AN ERROR");
+                    debugger;
+                    return;
+                }
+
+                throw new Error(Array.from(inputsInvolved, el => el.id));
+
+            }catch(SyntaxError)
+            {   
+                console.log(SyntaxError)
+                markAsError(SyntaxError.message);
+                return;
+            } finally
+            {
+                loader.style.display = "none";
+            }
+        });
+
+    </script>
+</body>
+</html>

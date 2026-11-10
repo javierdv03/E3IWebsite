@@ -1,0 +1,221 @@
+span.normalLetter
+{
+    color: gray;
+    font-size: 1em;
+}
+.specialChar
+{
+    font-weight: bold;
+    color: black;
+    font-size: 1.3em;
+}
+
+.lowLetter
+{
+    font-weight: bold;
+    color: var(--preferredGray);
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
+.mainTitleLetter
+{
+    font-size: 1.7em;
+    color: black;
+
+}
+
+.boxTitleLetter
+{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.subTitleStatBox
+{
+    margin-top: 18px;
+    margin-left: 7px;
+}
+
+.em07
+{
+    font-size: 0.7em;
+}
+
+.absoluteCenterMe {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: var(--centerLineLeftNavWidth);
+}
+
+.subitem
+{
+   margin-bottom: 10px;
+}
+
+.whiteness
+{
+    filter: brightness(0) invert(1);
+}
+
+.blackness
+{
+   filter: brightness(0);
+}
+
+.boldie
+{
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.itemUnderline:hover
+{
+    text-decoration: underline black;
+    cursor: pointer;
+}
+
+.relative {
+    position: relative; 
+}
+
+.statBox
+{
+    width: 270px;
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 13px;
+    margin-top: 50px;
+}
+
+.boxTitle
+{
+    margin-top: 15px;
+    margin-left: 20px;
+    color: gray;
+}
+
+.gap30px
+{
+    gap: 30px;
+}
+
+.centered
+{
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+}
+
+.benefit
+{
+    background: var(--successColor);
+    color: var(--successTextColor);
+}
+
+.drawback
+{
+        background: var(--errorColor);
+        color: var(--errorTextColor);
+}
+
+
+.statMinBox
+{
+    width: 55px;
+    height: 25px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+.commonBigDiv
+{
+    width: 60%;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+}
+
+.commonBtn
+{
+    position: relative;
+    width: 40%;
+    height: 45px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 24px;
+    text-transform: uppercase;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.commonBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;     
+    height: 100%;
+    border-radius: 24px;
+    background-color: #007AFF;
+    z-index: -1;
+    transition: width 0.5s ease-in-out; 
+}
+
+.commonBtn:hover::before {
+    width: 100%; 
+}
+
+.commonBtn:hover {
+    color: white; 
+}
+
+@media (max-width: 768px)
+{
+  .statBox
+    {
+        width: 180px;
+        background: white;
+        color: black;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+   .boxTitleLetter
+   {
+        font-size: 0.6em;
+        color: black;
+   }
+
+   .gap30px
+   {
+        gap: 23.1px;
+   }
+   
+   .em07
+   {
+        font-size: 0.57em;
+   }
+   .mainTitleLetter, span.normalLetter
+   {
+        color: white;
+   }
+   .shortcuts > .boxTitleLetter
+   {
+        font-size: 1.1em;
+   }
+
+   .commonBtn
+   {
+        width: 80%;
+   }
+
+   .commonBtn:hover
+   {
+        color: black;
+   }
+
+    
+}

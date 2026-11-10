@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura E3i Ingeniería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESETS */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+        /* ESTILOS RESPONSIVE (MÓVIL) */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .col-split { display: block !important; width: 100% !important; padding-bottom: 20px; }
+            .invoice-header { font-size: 24px !important; }
+            .padding-mobile { padding: 20px !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f0f0f0; font-family: 'Atkinson Hyperlegible', Verdana, sans-serif; color: #333333;">
+
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f0f0f0; padding: 40px 0;">
+        <tr>
+            <td align="center">
+                
+                <table class="email-container" border="0" cellpadding="0" cellspacing="0" width="600" style="background-color: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    
+                    <tr>
+                        <td height="5" style="background-color: #00A651; font-size: 0; line-height: 0;">&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" style="padding: 40px 40px 20px 40px;">
+                            <a href="https://www.e3i.es" target="_blank">
+                                <img src="https://tuservidor.com/GlobalAssets/img/icons/logo-e3i.png" alt="E3i Ingeniería" width="120" style="display: block; font-family: sans-serif; color: #333333; font-size: 14px;">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="padding-mobile" style="padding: 20px 40px;">
+                            <h1 class="invoice-header" style="color: #00A651; font-size: 28px; font-weight: 700; margin: 0 0 20px 0; text-align: center;">Factura de tu pedido</h1>
+                            
+                            <p style="font-size: 16px; line-height: 1.6; margin: 0 0 20px 0; color: #333333;">
+                                Hola <strong>{{NOMBRE_CLIENTE}}</strong>,
+                            </p>
+                            
+                            <p style="font-size: 16px; line-height: 1.6; margin: 0 0 30px 0; color: #666666;">
+                                Gracias por confiar en <strong>E3i Ingeniería</strong>. En tu panel de control tienes detalles más específicos de los pedidos, por seguridad no están disponibles en este email.
+                            </p>
+
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 4px;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="padding-bottom: 10px; font-size: 14px; color: #666666;">Nº Pedido:</td>
+                                                <td align="right" style="padding-bottom: 10px; font-size: 14px; font-weight: 700; color: #000000;">{{PEDIDO}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-bottom: 10px; font-size: 14px; color: #666666;">Fecha:</td>
+                                                <td align="right" style="padding-bottom: 10px; font-size: 14px; font-weight: 700; color: #000000;">{{FECHA}}</td>
+                                            </tr>                 
+                                            <tr>
+                                                <td style="border-top: 1px solid #ddd; padding-top: 10px; font-size: 16px; font-weight: 700; color: #00A651;">Total:</td>
+                                                <td align="right" style="border-top: 1px solid #ddd; padding-top: 10px; font-size: 18px; font-weight: 700; color: #00A651;">{{TOTAL}} €</td>
+                                            </tr>                                                                   
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="background-color: #333333; color: #ffffff; padding: 30px 40px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="col-split" align="left" valign="top" width="50%" style="font-size: 13px; line-height: 1.8; color: #cccccc;">
+                                        <strong>E3i Ingeniería</strong><br>
+                                        Polígono Industrial, 28000<br>
+                                        Madrid, España<br>
+                                        <a href="mailto:e3i@e3i.es" style="color: #00A651; text-decoration: none;">e3i@e3i.es</a>
+                                    </td>
+                                    <td class="col-split" align="right" valign="top" width="50%" style="font-size: 13px; line-height: 1.8; color: #cccccc;">
+                                        ¿Necesitas ayuda?<br>
+                                        Llámanos al: <a href="tel:+34912345678" style="color: #ffffff; text-decoration: none;">+34 912 345 678</a><br>
+                                        &copy; 2026 E3i Ingeniería.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container">
+                    <tr>
+                        <td align="center" style="padding: 20px; font-size: 12px; color: #999999;">
+                            <p style="margin: 0;">
+                                Has recibido este email porque eres cliente de E3i Ingeniería. 
+                                <a href="#" style="color: #666666; text-decoration: underline;">Política de Privacidad</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

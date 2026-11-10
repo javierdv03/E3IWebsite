@@ -1,0 +1,54 @@
+i
+{
+    width: var(--defaultSvgSize);
+    height: var(--defaultSvgSize);
+}
+
+.logoutIcon 
+{
+    background: url('../../img/icons/logout.svg') center/contain no-repeat;
+}
+
+.defaultUserIcon 
+{
+    background: url('../../img/icons/user.svg') center/contain no-repeat;
+}
+
+.certManagementIcon
+{
+    background: url('../../img/icons/certManagement.svg') center/contain no-repeat;
+}
+
+.cartIcon
+{
+    background: url('../../img/icons/cartIcon.svg') center/contain no-repeat;
+}
+
+.settingsIcon
+{
+    background: url('../../img/icons/settings.svg') center/contain no-repeat;
+}
+
+.adminSettingsIcon
+{
+    background: url('../../img/icons/adminSettings.svg') center/contain no-repeat;
+}
+.hamburgerIcon
+{
+    background: url('../../img/icons/hamburgerIcon.svg') center/contain no-repeat; 
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.crossIcon
+{
+    background: url('../../img/icons/crossIcon.svg') center/contain no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.eyeIcon
+{
+    background: url('../../img/icons/eyeIcon.svg') center/contain no-repeat;
+}

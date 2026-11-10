@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - E3I</title>
+    <style type="text/css">
+        /* RESET BÁSICO */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background-color: #f4f8fb; }
+
+        /* ESTILOS ESPECÍFICOS DE E3I */
+        .wrapper { width: 100%; table-layout: fixed; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        .webkit { max-width: 600px; margin: 0 auto; }
+        
+        /* BOTÓN CON DEGRADADO (Soporte progresivo) */
+        .btn-primary {
+            background-color: #00a8a8; /* Color sólido de respaldo (Teal) */
+            background-image: linear-gradient(135deg, #3dbd59 0%, #00a8a8 100%);
+            color: #ffffff;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            width: 200px;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+        }
+
+        /* MEDIA QUERIES PARA MÓVIL */
+        @media screen and (max-width: 600px) {
+            .img-max { width: 100% !important; max-width: 100% !important; height: auto !important; }
+            .mobile-padding { padding: 20px !important; }
+            .mobile-font { font-size: 24px !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f8fb;">
+
+    <center class="wrapper" style="width: 100%; background-color: #f4f8fb;">
+        <div class="webkit" style="max-width: 600px; margin: 0 auto;">
+            
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                <tr>
+                    <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                
+                <tr>
+                    <td height="6" style="font-size: 0; line-height: 0;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="33%" style="background-color: #3dbd59;"></td> <td width="33%" style="background-color: #00a8a8;"></td> <td width="34%" style="background-color: #00aadd;"></td> </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" style="padding: 40px 0 20px 0;">
+                        <img src="https://i.ibb.co/Ltb2p0q/logo-placeholder.png" alt="Logo E3I" width="150" style="display: block; border: 0; max-width: 180px;">
+                        </td>
+                </tr>
+
+                <tr>
+                    <td class="mobile-padding" align="center" style="padding: 0 50px 30px 50px; color: #333333;">
+                        <h1 class="mobile-font" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 26px; font-weight: bold; margin: 0 0 15px 0; color: #333333;">Restablece tu contraseña</h1>
+                        <p style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 26px; margin: 0 0 20px 0; color: #666666;">
+                            Hola, hemos recibido una solicitud para restablecer la contraseña de tu cuenta en <strong>E3I</strong>.
+                        </p>
+                        <p style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 26px; margin: 0 0 30px 0; color: #666666;">
+                            Si fuiste tú, haz clic en el botón de abajo para crear una nueva contraseña. Si no solicitaste esto, puedes ignorar este correo de forma segura.
+                        </p>
+
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td align="center" style="border-radius: 6px;">
+                                    <a href="{{LINK_VERIFICACION}}" target="_blank" class="btn-primary" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; color: #ffffff;">
+                                        Restablecer contraseña
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="mobile-padding" align="center" style="padding: 0 50px 40px 50px; border-top: 1px solid #eeeeee;">
+                        <p style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #999999; margin-top: 20px;">
+                            Si el botón no funciona, copia y pega el siguiente enlace en tu navegador:<br>
+                            <a href="#" style="color: #00a8a8; text-decoration: underline; word-break: break-all;">{{LINK_VERIFICACION}}</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                <tr>
+                    <td align="center" style="padding: 30px 20px; color: #999999; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px;">
+                        <p style="margin: 0;">© 2026 E3I. Todos los derechos reservados.</p>
+                        <p style="margin: 10px 0 0 0;">
+                            Este email fue enviado automáticamente. Por favor no respondas a este mensaje.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </center>
+</body>
+</html>

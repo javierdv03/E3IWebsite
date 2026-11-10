@@ -1,0 +1,267 @@
+/* --- ESTRUCTURA GENERAL --- */
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.page-header p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* --- TARJETA BLANCA --- */
+.card.form-container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* --- ALERTA SUPERIOR --- */
+.warning-banner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Para que baje en móvil si es necesario */
+}
+
+.warning-badge {
+    background-color: #FFF8E1; /* Fondo amarillo claro */
+    color: #FFA000; /* Texto naranja/dorado */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.warning-text {
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+}
+
+.icon-info {
+    font-style: normal;       /* Quita la cursiva */
+    display: inline-flex;     /* Para poder centrar la letra */
+    align-items: center;
+    justify-content: center;
+    width: 20px;              /* Ancho fijo */
+    height: 20px;             /* Alto fijo */
+    background-color: #FFA000; /* Fondo naranja del mismo color que el texto */
+    color: white;             /* Letra blanca */
+    border-radius: 50%;       /* Lo convierte en círculo */
+    font-weight: bold;
+    font-family: sans-serif;  /* Fuente limpia */
+    font-size: 14px;
+}
+
+/* Ajuste opcional para el texto de al lado */
+.warning-badge span {
+    position: relative;
+    top: 1px; /* Pequeño ajuste visual vertical */
+}
+
+.auto-fill-badge {
+    background-color: #999;
+    color: white;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto; /* Empuja esto a la derecha del todo */
+    line-height: 1.2;
+}
+
+.section-divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-bottom: 40px;
+}
+
+/* --- LAYOUT DOS COLUMNAS --- */
+.split-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.column {
+    flex: 1; /* Ocupan el mismo ancho */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre filas del formulario */
+}
+
+.vertical-separator {
+    width: 1px;
+    background-color: #ddd;
+    margin: 0 10px;
+}
+
+.col-title {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    height: 40px; /* Altura fija para alinear títulos de 1 o 2 líneas */
+    display: flex;
+    align-items: flex-end; /* Alinear abajo para que coincidan */
+    justify-content: center;
+}
+
+/* --- FILAS DEL FORMULARIO --- */
+.form-row {
+    display: grid;
+    grid-template-columns: 140px 1fr; /* Etiqueta fija ancho | Input resto */
+    align-items: center;
+    gap: 15px;
+}
+
+.form-row label {
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #333;
+    text-align: right; /* Alinear etiquetas a la derecha cerca del input */
+}
+
+/* --- INPUTS --- */
+.input-pill {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo Inputs "Datos Actuales" (Grises) */
+.static {
+    background-color: #9E9E9E; /* Gris oscuro como la imagen */
+    color: white;
+    font-weight: bold;
+    text-align: center; /* Texto centrado */
+}
+
+/* Estilo Inputs "Editables" (Blancos) */
+.editable {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Sombra para resaltar */
+    color: #333;
+    text-align: center;
+}
+.editable:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- BOTÓN FOOTER --- */
+.action-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn-large-modify {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #000;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.4;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-large-modify:hover {
+    background-color: #e0e0e0;
+}
+.btn-large-modify:active {
+    transform: translateY(2px);
+}
+
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 900px) {
+    
+    .card.form-container {
+        padding: 20px;
+    }
+
+    .mainContent
+    {
+        margin-left: -20px;
+        width: 100%;
+    }
+
+    /* Romper el layout horizontal */
+    .split-layout {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    /* Ocultar separador vertical */
+    .vertical-separator {
+        display: none;
+    }
+
+    /* Ajustar cabecera alerta */
+    .warning-banner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 10px;
+    }
+    .auto-fill-badge {
+        margin-left: 0; /* Centrar en móvil */
+        align-self: center;
+    }
+
+    /* Ajustar filas del formulario (Labels arriba) */
+    .form-row {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 5px;
+    }
+    
+    .form-row label {
+        text-align: left; /* Etiquetas alineadas a la izquierda */
+        margin-bottom: 2px;
+        color: #666;
+    }
+
+    .col-title {
+        height: auto;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    /* Botón ancho completo en móvil */
+    .btn-large-modify {
+        width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,273 @@
+/* --- RESET BÁSICO --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9; /* Fondo gris muy claro para contrastar la tarjeta */
+    color: #333;
+    padding: 20px;
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 410px;
+}
+
+/* --- ENCABEZADO --- */
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* --- TARJETA BLANCA (CARD) --- */
+.card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+/* --- ESTILOS COMUNES DE SECCIÓN --- */
+.section-instruction {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.info-icon {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-desc {
+    color: #999;
+    font-weight: 600;
+    margin-left: 34px; /* Alinear con el texto del título, saltando el icono */
+    margin-bottom: 30px;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+/* --- FORMULARIO (INPUTS) --- */
+.inputs-grid {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.col-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.col-right {
+    flex: 1;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group.full-height {
+    height: 100%;
+}
+
+label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Sombra sutil como la imagen */
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+textarea {
+    resize: none;
+    height: 100%; /* Ocupa todo el alto disponible en su columna */
+    min-height: 120px; /* Altura mínima para móvil */
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-color: #ccc;
+}
+
+/* --- SEPARADOR --- */
+.separator {
+    border: 0;
+    border-top: 2px solid #666;
+    margin: 40px 0;
+    opacity: 0.3;
+}
+
+/* --- VISTA PREVIA --- */
+.preview-section {
+    margin-top: 20px;
+}
+
+.preview-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.preview-image img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: block;
+}
+
+.preview-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.preview-details h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.preview-details .subtitle {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.preview-details .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.description-text {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    max-width: 400px;
+}
+
+.btn-save {
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    color: #000;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    align-self: flex-end; /* Alinear a la derecha como en la imagen */
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.btn-save:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 768px) 
+{
+    .main-container
+    {
+        margin-left: 0px;
+    }
+
+    .page-header
+    {
+        margin-top: 50px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Apilar inputs verticalmente */
+    .inputs-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .col-right .input-group.full-height textarea {
+        height: 150px; /* Altura fija en móvil */
+    }
+
+    /* Apilar vista previa verticalmente */
+    .preview-grid {
+        flex-direction: column;
+        align-items: center; /* Centrar elementos */
+    }
+
+    .preview-details {
+        width: 100%;
+        align-items: center; /* Centrar textos */
+        text-align: center;
+    }
+
+    .btn-save {
+        align-self: center; /* Botón centrado en móvil */
+        width: 100%;
+    }
+}

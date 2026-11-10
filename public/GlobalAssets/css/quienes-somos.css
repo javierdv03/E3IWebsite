@@ -1,0 +1,430 @@
+/* =======================================
+   E3i - ESTILOS PÁGINA QUIÉNES SOMOS
+   (Sincronizado con estilos de Landing e Ingeniería)
+   ======================================= */
+
+
+/* --- TÍTULOS DE SECCIÓN --- */
+h2 {
+    color: var(--color-primary-green);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+
+/* Contenedor estándar */
+.section-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* --- SECCIÓN HISTORIA (Ajustado al diseño de la imagen) --- */
+
+
+.history-block {
+    margin-bottom: 100px; 
+}
+
+
+.history-block:first-of-type {
+    margin-top: 50px; 
+}
+
+
+.history-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+
+.history-text {
+    flex: 0 0 45%;
+    max-width: 480px;
+}
+
+
+.history-block:not(:first-of-type) .history-text {
+    padding-top: 80px; 
+}
+
+
+.history-text p {
+    font-size: 18px; 
+    color: var(--color-text-body);
+    line-height: 1.6; 
+    font-weight: 400;
+    text-align: justify;
+    margin-top: 0;
+}
+
+
+.history-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* Ajuste para bloques invertidos (Imagen izquierda - Texto derecha) */
+.history-block.reverse .history-image {
+    justify-content: flex-start;
+}
+
+
+.history-image img {
+    width: 100%;
+    max-width: 450px; 
+    height: auto;
+    border: 1px solid #000; 
+    box-shadow: none; 
+    object-fit: cover; 
+}
+
+
+/* --- AJUSTE DE POSICIÓN DEL PRIMER BLOQUE --- */
+
+
+.history-block:first-of-type .history-text h2 {
+    margin-bottom: 80px;
+}
+
+
+.history-block:first-of-type .history-image {
+    margin-top: 80px;
+}
+
+
+/* --- SECCIÓN CUMPLIMIENTO NORMATIVO --- */
+
+
+.compliance-section {
+    margin-bottom: 100px;
+}
+
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.compliance-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    padding-left: 20px;
+}
+
+
+/* --- LA LÍNEA VERTICAL NEGRA --- */
+.compliance-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 1px;
+    height: 90%;
+    background-color: #000000;
+}
+
+
+/* ESTILO BASE COMÚN PARA IMÁGENES */
+.compliance-item img {
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* --- TAMAÑOS INDIVIDUALES --- */
+
+
+/* 1. Icono: Confianza */
+.compliance-grid .compliance-item:nth-child(1) img {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+
+/* 2. Icono: Transparencia (MÁS GRANDE) */
+.compliance-grid .compliance-item:nth-child(2) img {
+    width: 100px;
+    margin-bottom: 3px;
+}
+
+
+/* 3. Icono: Responsabilidad */
+.compliance-grid .compliance-item:nth-child(3) img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+
+/* 4. Icono: Mejora (MÁS GRANDE) */
+.compliance-grid .compliance-item:nth-child(4) img {
+    width: 125px;
+    margin-bottom: 5px;
+}
+
+
+/* --- TEXTOS --- */
+
+
+.compliance-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+}
+
+
+.compliance-item p {
+    font-size: 15px;
+    color: var(--color-text-body);
+    line-height: 1.5;
+}
+
+
+/* --- SECCIÓN TRABAJOS (Imagen Única de Collage) --- */
+
+
+.works-section {
+    margin-bottom: 120px;
+}
+
+
+.works-section h2 {
+    margin-bottom: 40px; 
+}
+
+
+.works-single-image-container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.collage-image {
+    width: 95%; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+}
+
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE
+   ======================================= */
+
+/* Tablets y móviles medianos (≤ 768px) */
+@media (max-width: 768px) {
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .section-container {
+        padding: 0 20px;
+    }
+
+    /* Historia */
+    .history-block {
+        margin-bottom: 70px;
+    }
+
+    .history-block:first-of-type {
+        margin-top: 40px;
+    }
+
+    .history-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Bloques reverse: imagen arriba, texto abajo */
+    .history-block.reverse .history-content {
+        flex-direction: column-reverse;
+    }
+
+    .history-text {
+        flex: 1;
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    .history-text p {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .history-image {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .history-block.reverse .history-image {
+        justify-content: center;
+    }
+
+    .history-image img {
+        max-width: 100%;
+    }
+
+    .history-block:first-of-type .history-text h2 {
+        margin-bottom: 40px;
+    }
+
+    .history-block:first-of-type .history-image {
+        margin-top: 0;
+    }
+
+    /* Cumplimiento */
+    .compliance-section {
+        margin-bottom: 70px;
+    }
+
+    .compliance-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 10px;
+    }
+
+    .compliance-item {
+        padding-left: 18px;
+    }
+
+    .compliance-item::before {
+        height: 85%;
+    }
+
+    .compliance-item h3 {
+        font-size: 18px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 380px) {
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .section-container {
+        padding: 0 16px;
+    }
+
+    /* Historia */
+    .history-block {
+        margin-bottom: 45px;
+    }
+
+    .history-block:first-of-type {
+        margin-top: 30px;
+    }
+
+    .history-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .history-block.reverse .history-content {
+        flex-direction: column-reverse;
+    }
+
+    .history-text {
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    .history-text p {
+        font-size: 14px;
+    }
+
+    .history-image img {
+        max-width: 100%;
+    }
+
+    .history-block:first-of-type .history-text h2 {
+        margin-bottom: 30px;
+    }
+
+    /* Cumplimiento normativo */
+    .compliance-section {
+        margin-bottom: 45px;
+    }
+
+    .compliance-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 0 4px;
+    }
+
+    .compliance-item {
+        padding-left: 16px;
+    }
+
+    .compliance-item::before {
+        height: 80%;
+    }
+
+    .compliance-grid .compliance-item:nth-child(1) img {
+        width: 50px;
+        margin-bottom: 12px;
+    }
+
+    .compliance-grid .compliance-item:nth-child(2) img,
+    .compliance-grid .compliance-item:nth-child(3) img {
+        width: 70px;
+        margin-bottom: 8px;
+    }
+
+    .compliance-grid .compliance-item:nth-child(4) img {
+        width: 85px;
+        margin-bottom: 8px;
+    }
+
+    .compliance-item h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .compliance-item p {
+        font-size: 13px;
+    }
+
+    /* Trabajos (collage) */
+    .works-section {
+        margin-bottom: 50px;
+    }
+
+    .works-section h2 {
+        margin-bottom: 24px;
+    }
+
+    .works-single-image-container {
+        max-width: 100%;
+    }
+
+    .collage-image {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+}

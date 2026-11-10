@@ -1,0 +1,237 @@
+/* =======================================
+   E3i - Estilos página Inicio de sesión
+   ======================================= */
+
+/* Layout general */
+.login-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Botón volver (esquina superior derecha) */
+.login-back-btn {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 10;
+}
+
+/* Imagen del botón */
+.login-back-btn img {
+    width: 36px;   /* ajusta al tamaño real del icono */
+    height: 36px;
+    display: block;
+}
+
+
+/* Columna izquierda */
+.login-left {
+    flex: 1;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-logo img {
+    height: 120px;
+    width: auto;
+}
+
+.login-form-container {
+    margin-top: 40px;
+    max-width: 420px;
+}
+
+.login-title {
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-label {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.login-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.login-input:focus {
+    border-bottom-color: var(--color-primary-green);
+}
+
+.login-forgot {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--color-text-body);
+    text-decoration: none;
+}
+
+.login-forgot:hover {
+    text-decoration: underline;
+}
+
+#fp
+{
+    margin-top: 8px;
+}
+
+/* Botones */
+.login-btn {
+    width: 100%;
+    height: 42px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.login-btn.primary {
+    background-color: #000;
+    color: #fff;
+}
+
+.login-btn.primary:hover {
+    opacity: 0.9;
+}
+
+.login-btn.secondary {
+    background-color: #fff;
+    color: #000;
+}
+
+.login-btn.secondary:hover {
+    background-color: #f5f5f5;
+}
+
+/* Columna derecha */
+.login-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 150px 40px 0;
+}
+
+.login-side-image {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #000;
+}
+
+.passwordProtection
+{
+    font-size: 0.8em;
+    margin-left: 6px;
+    font-weight: bold;
+}
+.passwordProtection > ul > li
+{
+    margin-left: 20px;
+    color: red;
+
+}
+.input-wrapper {
+    position: relative; /* Clave para que lo de adentro se posicione relativo a esto */
+    display: block;
+    width: 100%;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical exacto */
+    cursor: pointer;
+    color: #666; /* Color del icono */
+}
+
+/* =======================================
+   Responsive
+   ======================================= */
+
+/* Tablets y móviles medianos */
+@media (max-width: 900px) {
+
+    .abs {
+        top: 37%;
+        left: 58%;
+    }
+
+    .login-wrapper {
+        flex-direction: column;
+    }
+
+    .login-left {
+        padding: 40px 30px 20px 30px;
+    }
+
+    .login-form-container {
+        margin-top: 40px;
+        max-width: 100%;
+    }
+
+    .login-right {
+        padding: 20px 30px 40px 30px;
+    }
+
+    .login-side-image {
+        max-width: 100%;
+    }
+
+    .login-back-btn {
+        right: 20px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+        .abs
+  {
+    top: 50% ;
+    left: 52%;
+  }
+    .login-left {
+        padding: 30px 20px 15px 20px;
+    }
+
+    .login-logo img {
+        height: 70px;
+    }
+
+    @media (max-width: 480px) {
+    .login-back-btn {
+        top: 15px;
+        right: 15px;
+    }
+
+    .login-back-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+}

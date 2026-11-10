@@ -1,0 +1,752 @@
+/* =======================================
+   E3i - ESTILOS GLOBALES (Header, Footer, Variables)
+   ======================================= */
+
+
+:root {
+    /* Colores del diseño */
+    --color-primary-green: #00A651;
+    --color-text-dark: #000000;
+    --color-text-body: #333333;
+    --color-text-light: #666666;
+    --color-background-white: #ffffff;
+    
+    /* Ancho máximo del contenido */
+    --content-max-width: 1390px; 
+}
+
+
+/* --- RESET BÁSICO --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif; 
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: var(--color-text-body);
+    overflow-x: hidden;
+}
+
+
+/* --- CLASE DE UTILIDAD (Para centrar contenido) --- */
+.section-container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* ================= HEADER (CABECERA) ================= */
+
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px max(30px, calc((100% - var(--content-max-width)) / 2));
+    min-height: 130px;
+    background-color: var(--color-background-white);
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+.logo img {
+    height: 85px;
+    width: auto;
+    display: block;
+}
+
+
+/* BOTÓN HAMBURGUESA (oculto en desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+}
+
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+
+/* Animación del botón hamburguesa cuando está activo (X) */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+.main-nav {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+
+.main-nav ul {
+    display: flex;
+    list-style: none; 
+    align-items: center;
+    gap: 40px;
+}
+
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-text-body);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+
+.main-nav a:hover {
+    color: var(--color-text-dark);
+}
+
+
+.main-nav .btn-store {
+    font-weight: 500; 
+}
+
+
+/* Línea vertical separadora antes de "Iniciar Sesión" */
+.main-nav li.separator {
+    border-left: 1px solid #e0e0e0;
+    padding-left: 40px; 
+    height: 25px;
+    margin-right: -20px; 
+}
+
+
+/* ================= FOOTER (PIE DE PÁGINA) ================= */
+
+
+footer {
+    background-color: #ffffff;
+    color: var(--color-text-dark); 
+    padding-top: 80px;
+    padding-bottom: 40px;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+
+
+.footer-col {
+    flex: 1;
+}
+
+
+.brand-info {
+    flex-basis: 30%;
+    flex-grow: 0;
+}
+
+
+.brand-info img {
+    height: 100px; 
+    width: auto; 
+    max-width: none; 
+    margin-bottom: 20px;
+}
+
+
+.social-links {
+    margin-top: 20px;
+}
+
+
+.social-links a {
+    color: #999;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+
+.social-links a:hover {
+    color: var(--color-primary-green);
+}
+
+
+.email-link {
+    display: block;
+    margin-top: 15px;
+    color: var(--color-primary-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.footer-nav {
+    flex-basis: 60%; 
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+}
+
+
+.footer-links h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--color-text-dark);
+}
+
+
+.footer-links ul {
+    list-style: none;
+}
+
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-text-body);
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+
+.footer-links a:hover {
+    color: var(--color-primary-green);
+}
+
+
+/* Opcional: Copyright */
+.copyright {
+    display: none;
+}
+
+
+/* ================= MODAL DE COOKIES ================= */
+
+
+.cookies-overlay 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); 
+  backdrop-filter: blur(3px);      
+  z-index: 999;
+}
+.cookies-modal 
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: white;
+    width: 40%;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+}
+
+
+
+.error
+{
+    border-bottom: 2px solid red !important;
+}
+
+
+.logoCookie
+{
+    background: url(../img/icons/logo-e3i.png) no-repeat;
+    width: 100%;
+    height: 90px;
+    background-position: center center;
+    background-size: contain;
+}
+
+
+.explanation
+{
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.explanation > h3
+{
+    letter-spacing: 0.2mm;
+}
+
+.cookieList
+{
+    margin-left: 25px;
+}
+
+.buttonCookieSet
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cookieBtn
+{
+    width: 30%;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bolder;
+
+}
+
+#cookieAccept
+{
+    background:  linear-gradient(
+        90deg,
+        rgba(3,172,40,0.65) 0%,      
+        rgba(50,187,163,0.60) 60%,   
+        rgba(0,169,212,0.68) 100%);
+    color: white;
+}
+
+#cookieReject
+{
+    background: linear-gradient(
+        to right,
+        #DC354533,  
+        #F8717133  );
+}
+
+.h4Cookie
+{
+    margin-top: 10px;
+
+}
+
+/* --- 1. El Fondo (Overlay) --- */
+/* Lo ponemos oscuro para que tus colores resalten */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo negro */
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- 2. El Loader (Contenedor) --- */
+.loader {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+}
+
+/* --- 3. Los Anillos con Degradado --- */
+.loader::before, .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    
+    /* TRUCO: Usamos padding para definir el GROSOR del borde (8px) */
+    padding: 8px;
+    
+    /* AQUI VA TU DEGRADADO */
+    background: linear-gradient(
+        90deg,
+        rgba(3,172,40,0.65) 0%,      
+        rgba(50,187,163,0.60) 60%,   
+        rgba(0,169,212,0.68) 100%    
+    );
+    
+    /* LA MAGIA: Esto recorta el centro para que parezca un borde */
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    /* La animación original */
+    animation: prixClipFix 2s linear infinite;
+}
+
+/* Ajustes para el segundo anillo (el interior) */
+.loader::after {
+    /* Hacemos que el degradado del anillo interior sea ligeramente distinto 
+       invirtiendo la dirección o dejándolo igual. Aquí lo dejo igual. */
+    inset: 16px;
+    transform: rotate3d(90, 90, 0, 180deg);
+}
+
+/* --- Animaciones (Sin cambios) --- */
+@keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    75%, 100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+}
+
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE
+   ========================================= */
+
+
+/* Tablets y móviles medianos */
+@media (max-width: 768px) {
+    
+    /* Utilidad de contenedor */
+    .section-container {
+        padding: 0 20px;
+    }
+    
+    /* ===== HEADER CON MENÚ HAMBURGUESA ===== */
+    header {
+        padding: 15px 20px;
+        min-height: 70px;
+        position: relative;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    /* Mostrar botón hamburguesa */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Navegación oculta por defecto */
+    .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--color-background-white);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+    
+    /* Mostrar navegación cuando está activa */
+    .main-nav.active {
+        transform: translateX(0);
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .main-nav li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    .main-nav li.separator {
+        border-left: none;
+        border-top: 2px solid #e0e0e0;
+        padding-left: 0;
+        padding-top: 0;
+        height: auto;
+        margin-right: 0;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    
+    /* ===== FOOTER ===== */
+
+    footer {
+        padding-top: 80px;
+        padding-bottom: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .footer-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;   /* antes space-between */
+        gap: 2px;                     /* espacio entre logo y columnas */
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .brand-info {
+        flex: 0 0 35%;                 /* antes 30–35%: ocupa menos ancho */
+        text-align: left;
+    }
+
+    .brand-info img {
+        height: 55px;
+        margin: 0 0 8px 0;
+    }
+
+    .footer-nav {
+        flex: 0 0 auto;                /* se adapta al contenido */
+        display: flex;
+        flex-direction: row;
+        gap: 20px;                     /* menos separación entre columnas */
+    }
+
+    .social-links{
+        margin-top: 5px;
+    }
+
+    .footer-links h3 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .footer-links span {
+        font-size: 12px;
+        margin-bottom: 6px;
+        
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+
+    
+    /* ===== MODAL DE COOKIES ===== */
+    .cookies-modal {
+        width: 85%;
+        height: auto;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+    
+    .logoCookie {
+        height: 70px;
+        background-size: contain;
+    }
+    
+    .explanation {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 15px;
+    }
+    
+    .explanation > h3 {
+        font-size: 16px;
+    }
+    
+    .cookieList {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 14px;
+    }
+    
+    .buttonCookieSet {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .cookieBtn {
+        width: 100%;
+        height: 45px;
+        font-size: 14px;
+    }
+
+}
+/* Móviles pequeños */
+@media (max-width: 380px) {
+    
+    /* Contenedor */
+    .section-container {
+        padding: 0 15px;
+    }
+    
+    /* ===== HEADER ===== */
+    header {
+        padding: 10px 15px;
+        min-height: 70px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .hamburger {
+        width: 28px;
+        height: 22px;
+    }
+    
+    .hamburger span {
+        height: 2.5px;
+    }
+    
+    .main-nav {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+    
+    .main-nav ul {
+        padding: 20px 15px;
+        gap: 0;
+    }
+    
+    .main-nav a {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+    
+    /* ===== FOOTER ===== */
+     footer {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+    }
+
+    .footer-wrapper {
+        gap: 16px;
+    }
+
+    .brand-info {
+        flex-basis: 40%;
+    }
+
+    .brand-info img {
+        height: 55px;
+    }
+
+    .social-links a {
+        font-size: 16px;
+        margin-right: 8px;
+    }
+
+    .email-link {
+        font-size: 12px;
+    }
+
+    .footer-nav {
+        flex-basis: 55%;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links h3 {
+        font-size: 13px;
+    }
+
+    .footer-links a {
+        font-size: 8px;
+    }
+    
+    /* ===== MODAL DE COOKIES ===== */
+    .cookies-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .logoCookie {
+        height: 60px;
+    }
+    
+    .explanation {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .explanation > h3 {
+        font-size: 14px;
+    }
+    
+    .cookieList {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 13px;
+    }
+    
+    .buttonCookieSet {
+        padding: 0 15px;
+        gap: 12px;
+    }
+    
+    .cookieBtn {
+        height: 42px;
+        font-size: 13px;
+    }
+}
+

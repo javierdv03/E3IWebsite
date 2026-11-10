@@ -1,0 +1,156 @@
+/* --- ESTRUCTURA GENERAL --- */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.page-header p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* --- TARJETA BLANCA --- */
+.card.form-container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    min-height: 500px;
+    /* Centrado vertical del contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; /* Centra el contenido si la tarjeta es muy alta */
+}
+
+/* Envoltorio para limitar el ancho del contenido interno */
+.content-wrapper {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espacio entre título, input y botón */
+}
+
+/* --- TÍTULO INTERNO --- */
+.form-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+}
+
+/* --- GRUPO DE INPUT (Label + Input) --- */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.input-pill {
+    flex: 1; /* Ocupa el resto del espacio */
+    max-width: 350px; /* Ancho máximo para que no sea gigante */
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #fff;
+    /* La sombra "pill" clave */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05);
+    font-size: 1rem;
+    color: #333;
+    transition: box-shadow 0.2s;
+    outline: none;
+}
+
+.input-pill:focus {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- BOTÓN AÑADIR --- */
+.action-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-large-add {
+    background-color: #f5f5f5; /* Gris muy claro */
+    border: none;
+    padding: 15px 80px; /* Botón ancho */
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #000;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra flotante */
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-large-add:hover {
+    background-color: #e0e0e0;
+}
+.btn-large-add:active {
+    transform: translateY(2px);
+}
+
+/* ==========================================================================
+   MÓVIL / RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    .mainContent
+    {
+        width: 100%;
+        margin-left: 0px;
+    }
+        
+    .card.form-container {
+        padding: 40px 20px;
+        justify-content: flex-start; /* En móvil que empiece arriba */
+    }
+
+    .content-wrapper {
+        gap: 30px;
+    }
+
+    /* Romper la fila a columna */
+    .form-group {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch; /* Estirar a lo ancho */
+    }
+
+    .form-group label {
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .input-pill {
+        max-width: 100%; /* Full width en móvil */
+    }
+
+    .btn-large-add {
+        width: 100%;
+        padding: 20px;
+    }
+}

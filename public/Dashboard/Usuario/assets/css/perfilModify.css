@@ -1,0 +1,225 @@
+/* --- ESTRUCTURA GENERAL --- */
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 30px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.page-header p {
+    color: #999;
+}
+
+/* --- TARJETA --- */
+.card.profile-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* --- AVATAR EDITABLE --- */
+.profile-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+    position: relative; /* Clave para posicionar el botón de cámara */
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Botón flotante de cámara */
+.btn-camera-upload {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #42E695;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-camera-upload:hover {
+    transform: scale(1.1);
+    background: #36d685;
+}
+
+.helper-text {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #f0f0f0;
+    margin: 30px 0;
+}
+
+/* --- FORMULARIO --- */
+.section-subtitle {
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-left: 4px solid #42E695;
+    padding-left: 10px;
+}
+
+.info-text {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.mt-large { margin-top: 50px; }
+
+/* Grid System */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    row-gap: 25px;
+}
+
+.full-width { grid-column: span 2; }
+
+/* --- INPUTS (60px) --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.input-shadow {
+    width: 100%;
+    height: 60px; /* Altura 60px */
+    border: 1px solid transparent; /* Transparente para evitar saltos al enfocar */
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+    padding: 0 25px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+/* Efecto al hacer clic para escribir */
+.input-shadow:focus {
+    box-shadow: 0 6px 15px rgba(66, 230, 149, 0.2); /* Resplandor verde suave */
+    border-color: rgba(66, 230, 149, 0.5);
+}
+
+/* Estilo especial para email bloqueado */
+.read-only-style {
+    background-color: #f9f9f9;
+    color: #999;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+    cursor: not-allowed;
+}
+
+/* --- BOTONES DE ACCIÓN (Footer) --- */
+.action-footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-cancel {
+    background: #f5f5f5;
+    color: #555;
+    border: none;
+    height: 60px;
+    padding: 0 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+    background: #e0e0e0;
+}
+
+.btn-save {
+    background: linear-gradient(90deg, #42E695 0%, #3BB2B8 100%);
+    color: white;
+    border: none;
+    height: 60px;
+    padding: 0 50px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(66, 230, 149, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 230, 149, 0.5);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .mainContent
+    {
+        margin-left: -35px;
+        width: 100%;
+    }    
+    .card.profile-card { padding: 30px 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .full-width { grid-column: span 1; }
+    
+    .action-footer {
+        flex-direction: column-reverse; /* Cancelar abajo en móvil */
+    }
+    .btn-cancel, .btn-save { width: 100%; }
+}
